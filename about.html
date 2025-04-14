@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="ATIENO GRACE E ONYANGO" >
+    <meta name="descripition" content="A webpage about Animal Homeland Page.">
+    <meta property="og:title" content="Animal Homeland Page">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://www.aboutamimalhomeland.com">
+    <title>Animal World</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+       /* Top Bar */
+       .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color:white;
+            color:black;
+            padding-bottom:0cap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+          width: 150px;
+          height: 150px;
+          border-radius: 250px;
+          margin: 20px auto;
+          display: block;
+          border: 5px solid black;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo h1 {
+            margin: 0;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: black;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: text 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #367c39;
+            border-radius: 5px;
+        }
+        /* Hero Section */
+    .hero-section {
+      text-align: center;
+      padding-bottom:20cap;
+      background: url('img-carousel.jpg') no-repeat center center / cover;
+      color:black;
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .hero-section h2 {
+  font-size: 6rem; /* or try 4rem for even bigger */
+  font-weight: bolder;
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transform: scale(0);
+  margin: 0;
+}
+
+   .hero-section h2.active {
+  opacity: 1;
+  animation: popOut 1.2s ease forwards;
+}
+        /* Info Section */
+        .info-section {
+            padding: 40px 20px;
+            background-color: #e8f5e9;
+            text-align: center;
+        }
+
+        .info-section h2 {
+            margin-bottom: 10px;
+        }
+        /* Smooth Pop-Out Animation (No Bounce) */
+    @keyframes popOut {
+      0% {
+        opacity: 0;
+        transform: scale(0);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+        /* Footer */
+    .footer {
+      text-align: center;
+      padding-bottom: 2cap;
+      background-color:black;
+      color: white;
+    }
+
+    </style>
+</head>
+<body>
+    <header class="top-bar">
+        <div class="logo">
+            <img src="img.logo.jpeg" alt="">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home" class="hero-section">
+        <p>Welcome to <strong style="color: #eee;">AgriUrb</strong></p>
+        <h2 class="active">A Unique Blend Of Urban Innovation and Agriculture</h2>
+        <h2>Building sustainable communities</h2>
+    </section>
+    <section id="about" class="info-section">
+        <h2>About Us</h2>
+        <p>Animal World is dedicated to educating, showcasing, and conserving the amazing diversity of animal life.</p>
+    </section>
+    <script>
+        const headings = document.querySelectorAll('.hero-section h2');
+        let index = 0;
+    
+        setInterval(() => {
+          headings[index].classList.remove('active');
+          index = (index + 1) % headings.length;
+          headings[index].classList.add('active');
+        }, 3000);
+      </script>
+    <footer class="footer" style="justify-content: baseline;">
+        <p style="text-align:left;">&copy;AgriUrb, All Right Reserved.</p>
+        <p style="text-align: right;">Designed By Grace Emmaculate</p>
+    </footer>
+    
+</body>
