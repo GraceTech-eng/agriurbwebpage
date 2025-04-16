@@ -125,7 +125,7 @@
   transform: scale(1.05);
 }
     
-        .image-text-container {
+      .image-text-container {
   display: flex;
   align-items: center; /* vertically center text with image */
   gap: 20px; /* space between image and text */
@@ -158,18 +158,143 @@
 .text-content2 {
   max-width: 1000px;
 }
+.perfect-section header{
+  background-color:rgb(240, 243, 235);
+  text-align:center;
+  padding: 250px;
+  margin: 15px;
+}
+.perfect-section h3{
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: rgb(111, 174, 111);
+}
+.perfect-section h1{
+  font-size: 3rem;
+  line-height:1;
+  color: #333;
+}
 
-         /* Animations */
-         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+.perfect-section img{
+  width: 350px;
+  height: 350px;
+  justify-content: baseline;
+  margin: 20px auto;
+  display:flex;
+  box-shadow:black;
+}
+
+.land-listing-section-container {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  padding: 100px;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-bottom: 300px; /* ✅ Adds space for the 'hanging' text boxes */
+  overflow: visible; /* ✅ Ensures hanging elements are visible */
+  flex-wrap: wrap;   /* ✅ Allows wrapping on smaller screens */
+}
+
+.land-listing-section1 {
+  background-image: url('img-00fhj5.png'); /* Make sure the path is correct */
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+  width: 350px;
+  position: relative;
+  overflow: visible;
+  margin-bottom: 80px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.land-listing-section2 {
+  background-image: url('img-00fhja.png'); /* Make sure the path is correct */
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+  width: 350px;
+  position: relative;
+  overflow: visible;
+  margin-bottom: 80px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.land-listing-section3 {
+  background-image: url('img-00fhj6.png'); /* Make sure the path is correct */
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+  width: 350px;
+  position: relative;
+  overflow: visible;
+  margin-bottom: 80px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.land-listing-section4 {
+  background-image: url('img-00fhj7.png'); /* Make sure the path is correct */
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+  width: 350px;
+  position: relative;
+  overflow: visible;
+  margin-bottom: 80px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.listing-overlay {
+  background-color: #fff;
+  padding: 20px 30px;
+  text-align: center;
+  justify-content: center;
+  width: 220px;
+  height: 220px;
+  position: absolute;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.listing-overlay h3 {
+  font-size: 1.8rem;
+  color: #5a9c45;
+  margin-bottom: 10px;
+}
+
+.listing-overlay p {
+  font-size: 1.1rem;
+  color:black;
+  line-height: 1.6;
+}
+
+.great-section header {
+  background-color: #7f9b5a; /* Optional: match your background color */
+  padding: 50px;
+  margin: 15px;
+  text-align:left;
+}
+
+.general {
+  display: flex;
+  justify-content: left;
+  gap: 2rem; /* spacing between columns */
+  margin-top: 1rem;
+}
+
+.text-column {
+  flex: 1;
+  max-width: 200px;
+  text-align: left;
+}
+
+.text-column ul {
+  list-style-type:square;
+  padding-left: 20px;
+}
+
 
     /* Smooth Pop-Out Animation (No Bounce) */
     @keyframes popOut {
@@ -182,83 +307,13 @@
         transform: scale(1);
       }
     }
-    /* Responsive Styling */
-@media (max-width: 1024px) {
-  .hero-section h2 {
-    font-size: 4rem;
-  }
-
-  .logo img {
-    width: 120px;
-    height: 120px;
-  }
-
-  .nav-links {
-    gap: 15px;
-  }
-}
-
-@media (max-width: 768px) {
-  .top-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 15px;
-  }
-
-  .logo {
-    align-self: center;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    padding: 10px 0;
-    gap: 10px;
-  }
-
-  .hero-section h2 {
-    font-size: 2.5rem;
-  }
-
-  .services-section ul {
-    padding: 0 10px;
-  }
-
-  .footer {
-    padding: 10px;
-  }
-
-  .footer p {
-    text-align: center !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-section h2 {
-    font-size: 2rem;
-  }
-
-  .logo img {
-    width: 100px;
-    height: 100px;
-  }
-
-  .nav-links a {
-    font-size: 14px;
-    padding: 8px 5px;
-  }
-
-  .services-section li {
-    font-size: 15px;
-    padding: 10px;
-  }
-}
+  
     </style>
 </head>
 <body>
     <header class="top-bar">
         <div class="logo">
-            <img src="img.logo.jpeg" alt="">
+            <img src="img.logo.jpeg" alt="image">
         </div>
         <nav>
             <ul class="nav-links">
@@ -278,22 +333,22 @@
 
     <nav class="FirstPhotos">
       <div class="column">
-        <img src="img.00fhj2.png" alt="" style="width: 250px;
+        <img src="img.00fhj2.png" alt="image" style="width: 250px;
           height: auto;">
-        <img src="img.00fhj0.png" alt="" style="width:250px;
+        <img src="img.00fhj0.png" alt="image" style="width:250px;
           height:150px;">
       </div>
       <div class="column">
-          <img src="img.00fhj1.png" alt="" style="width: 150px;
+          <img src="img.00fhj1.png" alt="image" style="width: 150px;
           height:150px;">
-          <img src="img.00fhiz.png" alt="" style="width: 250px;
+          <img src="img.00fhiz.png" alt="image" style="width: 250px;
           height: auto;">
       </div>
     </nav>
     
     <nav style="margin: 3cap;">
-      <h2 style="font-size: 1.5rem;color: rgb(111, 174, 111);"><em>Why Choose Agriurb</em></h2>
-      <p style="font-size: 2rem;">We offer a unique blend of agricultural innovation and urban development that benefits everyone involved. Here’s why you should choose us</p>
+      <h2 style="font-size: 1.5rem;color:#5a9c45;"><em>Why Choose Agriurb</em></h2>
+      <p style="font-size: 2rem; font-weight: bolder;">We offer a unique blend of agricultural innovation and urban development that benefits everyone involved. Here’s why you should choose us</p>
     </nav>
 
     <div class="image-text-container">
@@ -329,10 +384,66 @@
         <p><strong>Diverse Roles</strong> : From agricultural roles to urban management positions, there are numerous career paths available.</p>
         <p><strong>Diverse Roles</strong>: As part of the Agriurb community, you gain exclusive access to high-potential investment ventures within the SEZ, along with tax incentives for businesses registered within the zone.</p>
       </div>
-  </div>    
-      <header>
-        
-      </header>
+  </div>
+      <br><br><br>
+  <div class="perfect-section">
+    <header>
+      <h3>Join Our Community</h3>
+      <h1>At Agriurb, we believe in building a thriving community where everyone has the opportunity to succeed</h1>
+    <div class="land-listing-section-container">
+      <div class="land-listing-section1">
+        <div class="listing-overlay">
+          <h3>Land Listing</h3>
+          <p>If you own land within Agriurb zones, you can enlist your property to be part of our agricultural initiative.</p>
+        </div>
+      </div>
+
+      <div class="land-listing-section2">
+        <div class="listing-overlay">
+          <h3>Land Listing</h3>
+          <p>If you own land within Agriurb zones, you can enlist your property to be part of our agricultural initiative.</p>
+        </div>
+      </div>
+
+      <div class="land-listing-section3">
+        <div class="listing-overlay">
+          <h3>Land Listing</h3>
+          <p>If you own land within Agriurb zones, you can enlist your property to be part of our agricultural initiative.</p>
+        </div>
+      </div>
+
+      <div class="land-listing-section4">
+        <div class="listing-overlay">
+          <h3>Land Listing</h3>
+          <p>If you own land within Agriurb zones, you can enlist your property to be part of our agricultural initiative.</p>
+        </div>
+      </div>
+    </div>  
+    </header>
+  </div>
+     <br><br><br>
+  <div class="great-section">
+    <header>
+      <h2 style="color: black;">Agriurb News<strong style="color: white;">Check</strong> Out Our</h2>
+      <h2 style="color: white;"> Latest Updates</h2>
+      <p style="color: white;">Stay updated on our latest developments,<br>technological advancements, and community stories</p>
+      <div class="general">
+       <div class="text-column">
+        <ul>
+        <li>Virtual City Simulation Reaches 50,000 Residents!</li>
+        <li>Drones Revolutionize Crop Monitoring</li>
+        </ul>
+       </div>
+       <div class="text-column">
+        <ul>
+          <li>SEZ Infrastructure Breakthrough: New Agro-Tech Hub Launched</li>
+          <li>SEZ Tax Incentives Explained</li>
+        </ul>
+       </div>
+     </div>
+    </header>
+  </div>
+      
       <script>
         const headings = document.querySelectorAll('.hero-section h2');
         let index = 0;
@@ -343,7 +454,7 @@
           headings[index].classList.add('active');
         }, 3000);
       </script>
-      <header></header>
+    
 
 </body>
 </html>
