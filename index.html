@@ -68,7 +68,7 @@
     .hero-section {
       text-align: center;
       padding-bottom:40cap;
-      background: url('img-carousel.jpg') no-repeat center center / cover;
+      background: url('images/img-carousel.jpg') no-repeat center center / cover;
       color:black;
       position: relative;
       height: 150px;
@@ -187,17 +187,22 @@
 .land-listing-section-container {
   display: flex;
   flex-direction: row;
-  gap: 100px;
+  gap: 100px; /* Space between sections */
   padding: 100px;
-  justify-content: flex-end;
+  padding-bottom: 300px; /* Space for hanging text boxes */
+  overflow: visible; /* Ensures hanging elements are visible */
+  flex-wrap: nowrap; /* ✅ Prevents wrapping, keeps sections in a row */
+  justify-content: center; /* Centers sections horizontally */
   align-items: flex-start;
-  padding-bottom: 300px; /* ✅ Adds space for the 'hanging' text boxes */
-  overflow: visible; /* ✅ Ensures hanging elements are visible */
-  flex-wrap: wrap;   /* ✅ Allows wrapping on smaller screens */
+  min-width: 1800px; /* ✅ Ensures enough width for 4 sections + gaps + padding */
+  box-sizing: border-box;
 }
 
-.land-listing-section1 {
-  background-image: url('img-00fhj5.png'); /* Make sure the path is correct */
+/* Common styles for all sections */
+.land-listing-section1,
+.land-listing-section2,
+.land-listing-section3,
+.land-listing-section4 {
   background-size: cover;
   background-position: center;
   height: 350px;
@@ -206,56 +211,38 @@
   overflow: visible;
   margin-bottom: 80px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0; /* Prevents sections from shrinking */
+}
+
+/* Individual background images */
+.land-listing-section1 {
+  background-image: url('images/img-00fhj5.png');
 }
 
 .land-listing-section2 {
-  background-image: url('img-00fhja.png'); /* Make sure the path is correct */
-  background-size: cover;
-  background-position: center;
-  height: 350px;
-  width: 350px;
-  position: relative;
-  overflow: visible;
-  margin-bottom: 80px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-image: url('images/img-00fhja.png');
 }
 
 .land-listing-section3 {
-  background-image: url('img-00fhj6.png'); /* Make sure the path is correct */
-  background-size: cover;
-  background-position: center;
-  height: 350px;
-  width: 350px;
-  position: relative;
-  overflow: visible;
-  margin-bottom: 80px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-image: url('images/img-00fhj6.png');
 }
 
 .land-listing-section4 {
-  background-image: url('img-00fhj7.png'); /* Make sure the path is correct */
-  background-size: cover;
-  background-position: center;
-  height: 350px;
-  width: 350px;
-  position: relative;
-  overflow: visible;
-  margin-bottom: 80px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-image: url('images/img-00fhj7.png');
 }
 
+/* Overlay styles */
 .listing-overlay {
   background-color: #fff;
   padding: 20px 30px;
   text-align: center;
-  justify-content: center;
   width: 220px;
-  height: 220px;
+  height: auto; /* Adjusted to fit content */
   position: absolute;
-  bottom: -200px;
+  bottom: -150px; /* Adjusted to hang below without excessive overlap */
   left: 50%;
   transform: translateX(-50%);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .listing-overlay h3 {
@@ -266,8 +253,31 @@
 
 .listing-overlay p {
   font-size: 1.1rem;
-  color:black;
+  color: black;
   line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1800px) {
+  .land-listing-section-container {
+    overflow-x: auto; /* Enables horizontal scrolling on smaller screens */
+    flex-wrap: nowrap; /* Ensures sections stay in a row */
+    padding: 50px; /* Reduces padding for smaller screens */
+    min-width: unset; /* Removes min-width for responsiveness */
+  }
+
+  .land-listing-section1,
+  .land-listing-section2,
+  .land-listing-section3,
+  .land-listing-section4 {
+    width: 300px; /* Slightly smaller sections for smaller screens */
+    height: 300px;
+  }
+
+  .listing-overlay {
+    width: 200px; /* Adjust overlay size */
+    bottom: -120px; /* Adjust overlay position */
+  }
 }
 
 .great-section header {
@@ -290,9 +300,33 @@
   text-align: left;
 }
 
-.text-column ul {
-  list-style-type:square;
-  padding-left: 20px;
+.custom-checklist {
+  list-style-type: none; /* remove default bullets */
+  padding: 0;
+}
+
+.custom-checklist li {
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.check-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 35px;
+  height: 35px;
+  background-color: white;
+  color: #7ac143; /* green checkmark */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 
@@ -313,7 +347,7 @@
 <body>
     <header class="top-bar">
         <div class="logo">
-            <img src="img.logo.jpeg" alt="image">
+            <img src="images/img.logo.jpeg" alt="image">
         </div>
         <nav>
             <ul class="nav-links">
@@ -333,15 +367,15 @@
 
     <nav class="FirstPhotos">
       <div class="column">
-        <img src="img.00fhj2.png" alt="image" style="width: 250px;
+        <img src="images/img.00fhj2.png" alt="image" style="width: 250px;
           height: auto;">
-        <img src="img.00fhj0.png" alt="image" style="width:250px;
+        <img src="images/img.00fhj0.png" alt="image" style="width:250px;
           height:150px;">
       </div>
       <div class="column">
-          <img src="img.00fhj1.png" alt="image" style="width: 150px;
+          <img src="images/img.00fhj1.png" alt="image" style="width: 150px;
           height:150px;">
-          <img src="img.00fhiz.png" alt="image" style="width: 250px;
+          <img src="images/img.00fhiz.png" alt="image" style="width: 250px;
           height: auto;">
       </div>
     </nav>
@@ -352,7 +386,7 @@
     </nav>
 
     <div class="image-text-container">
-      <img src="img.00fhj3.png" alt="image">
+      <img src="images/img.00fhj3.png" alt="image">
       <div class="text-content">
         <h3>Guaranteed Annual Returns</h3>
         <h3>Maximize Your Earnings</h3>
@@ -375,7 +409,7 @@
     </div>
 
     <div class="image-text-display">
-      <img src="img.00fhj4.png" alt="image">
+      <img src="images/img.00fhj4.png" alt="image">
       <div class="text-content2">
         <h3>Priority for Jobs and Investments</h3>
         <h3>Exclusive Opportunities :</h3>
@@ -400,49 +434,57 @@
 
       <div class="land-listing-section2">
         <div class="listing-overlay">
-          <h3>Land Listing</h3>
-          <p>If you own land within Agriurb zones, you can enlist your property to be part of our agricultural initiative.</p>
+          <h3>Capital Investors</h3>
+          <p>Anyone interestred in investing cash into our farming initiatives, weather local or international</p>
         </div>
       </div>
 
       <div class="land-listing-section3">
         <div class="listing-overlay">
-          <h3>Land Listing</h3>
-          <p>If you own land within Agriurb zones, you can enlist your property to be part of our agricultural initiative.</p>
+          <h3>Land Buying</h3>
+          <p>People without existing land in Agriurb zones who want to invest in land for future benefits.</p>
         </div>
       </div>
 
       <div class="land-listing-section4">
         <div class="listing-overlay">
-          <h3>Land Listing</h3>
-          <p>If you own land within Agriurb zones, you can enlist your property to be part of our agricultural initiative.</p>
+          <h3>Residents</h3>
+          <p>Indivuduals and families looking for secure housingoptions within our developing urban center</p>
         </div>
       </div>
     </div>  
     </header>
   </div>
      <br><br><br>
-  <div class="great-section">
-    <header>
-      <h2 style="color: black;">Agriurb News<strong style="color: white;">Check</strong> Out Our</h2>
-      <h2 style="color: white;"> Latest Updates</h2>
-      <p style="color: white;">Stay updated on our latest developments,<br>technological advancements, and community stories</p>
-      <div class="general">
-       <div class="text-column">
-        <ul>
-        <li>Virtual City Simulation Reaches 50,000 Residents!</li>
-        <li>Drones Revolutionize Crop Monitoring</li>
-        </ul>
-       </div>
-       <div class="text-column">
-        <ul>
-          <li>SEZ Infrastructure Breakthrough: New Agro-Tech Hub Launched</li>
-          <li>SEZ Tax Incentives Explained</li>
-        </ul>
-       </div>
-     </div>
-    </header>
-  </div>
+     <div class="great-section">
+      <header>
+        <h2>Agriurb News <strong style="color: white;">Check</strong> Out Our</h2>
+        <h2>Latest Updates</h2>
+        <p>Stay updated on our latest developments, technology, and stories</p>
+        <div class="general">
+          <div class="text-column">
+            <ul class="custom-checklist">
+              <li><span class="check-icon">✔</span>Virtual City Simulation Reaches 50,000 Residents!</li>
+              <li><span class="check-icon">✔</span>Drones Revolutionize Crop Monitoring</li>
+            </ul>
+          </div>
+          <div class="text-column">
+            <ul class="custom-checklist">
+              <li><span class="check-icon">✔</span>New Agro-Tech Hub Launched</li>
+              <li><span class="check-icon">✔</span>SEZ Tax Incentives Explained</li>
+            </ul>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <p style="color: #7ac143;text-align: center;">Online Store</p>
+    <h1 style="text-align: center;font-size: 3rem;">Shop the best, forget the<br>rest</h1>
+
+    <div>
+      <img src="images/img.galic.jpg" alt="">
+      <img src="images/img.soybeans.jpg" alt="">
+    </div>
       
       <script>
         const headings = document.querySelectorAll('.hero-section h2');
@@ -454,7 +496,6 @@
           headings[index].classList.add('active');
         }, 3000);
       </script>
-    
 
 </body>
 </html>
